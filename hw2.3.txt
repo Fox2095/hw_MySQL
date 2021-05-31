@@ -1,0 +1,125 @@
+Задание №3
+
+Microsoft Windows [Version 10.0.17763.253]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2018. Все права защищены.
+
+C:\Users\User>mysqldump example > example.sql
+
+C:\Users\User>dir
+ Том в устройстве C имеет метку Windows 10
+ Серийный номер тома: BA95-0782
+
+ Содержимое папки C:\Users\User
+
+Пн 31.05.21  23:34    <DIR>          .
+Пн 31.05.21  23:34    <DIR>          ..
+Чт 27.05.21  12:53             7 526 .bash_history
+Пн 31.05.21  21:32    <DIR>          .eclipse
+Ср 10.03.21  02:06               245 .gitconfig
+Сб 24.04.21  14:35    <DIR>          .ssh
+Чт 27.05.21  12:10    <DIR>          .VirtualBox
+Вт 11.02.20  15:02    <DIR>          3D Objects
+Вт 11.02.20  15:02    <DIR>          Contacts
+Чт 27.05.21  13:17    <DIR>          Desktop
+Пт 23.04.21  23:43    <DIR>          Documents
+Чт 27.05.21  22:51    <DIR>          Downloads
+Пн 31.05.21  23:34             1 984 example.sql
+Вт 11.02.20  15:02    <DIR>          Favorites
+Сб 28.11.20  18:16                 0 hello.txt
+Вт 11.02.20  15:02    <DIR>          Links
+Ср 10.03.21  22:02            71 518 mintty.2021-03-10_22-02-24.png
+Вт 11.02.20  15:02    <DIR>          Music
+Пн 31.05.21  21:48                 0 mysql
+Вт 11.02.20  15:06    <DIR>          OneDrive
+Вт 11.02.20  15:49    <DIR>          Pictures
+Вт 02.02.21  15:45    <DIR>          project
+Сб 06.02.21  13:41    <DIR>          PycharmProjects
+Вт 11.02.20  15:02    <DIR>          Saved Games
+Вт 17.03.20  16:38    <DIR>          Searches
+Вт 11.02.20  18:15    <DIR>          Videos
+Ср 26.05.21  07:42    <DIR>          VirtualBox VMs
+Пн 31.05.21  17:40    <DIR>          YandexDisk
+               6 файлов         81 273 байт
+              22 папок  88 603 017 216 байт свободно
+
+C:\Users\User>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 49
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| homework_test      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| vk                 |
+| world              |
++--------------------+
+9 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE sample;
+Query OK, 1 row affected (0.10 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| homework_test      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sample             |
+| sys                |
+| vk                 |
+| world              |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql> \q
+Bye
+
+C:\Users\User>mysql sample < example.sql
+
+C:\Users\User>mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 51
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE sample;
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> \q
+Bye
+
+C:\Users\User>
